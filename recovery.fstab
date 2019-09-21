@@ -15,12 +15,12 @@
 #
 
 /system		ext4	/dev/block/platform/155a0000.ufs/by-name/SYSTEM
-/data		ext4	/dev/block/platform/155a0000.ufs/by-name/USERDATA flags=length=-20480,encryptable=footer
+/data		ext4	/dev/block/platform/155a0000.ufs/by-name/USERDATA 	flags=length=-20480,encryptable=footer
 /cache		ext4	/dev/block/platform/155a0000.ufs/by-name/CACHE
-/boot		emmc	/dev/block/platform/155a0000.ufs/by-name/BOOT	 flags=backup=1;display="Kernel"
-/recovery	emmc	/dev/block/platform/155a0000.ufs/by-name/RECOVERY flags=backup=1;display="Recovery"
-/modem		emmc	/dev/block/platform/155a0000.ufs/by-name/RADIO    flags=backup=1;display="Baseband"
-/efs		ext4	/dev/block/platform/155a0000.ufs/by-name/EFS	     flags=backup=1;display="EFS"
-/misc       emmc    /dev/block/platform/155a0000.ufs/by-name/OTA
-/external_sd	vfat	/dev/block/mmcblk0p1 /dev/block/mmcblk0	         flags=display="Micro SDcard";storage;wipeingui;removable
-/usb-otg	vfat	/dev/block/sde1  /dev/block/sde			         flags=display="USB-OTG";storage;wipeingui;removable
+/boot		emmc	/dev/block/platform/155a0000.ufs/by-name/BOOT	 	flags=backup=1;display="Kernel"
+/recovery	emmc	/dev/block/platform/155a0000.ufs/by-name/RECOVERY 	flags=backup=1;display="Recovery"
+/modem		emmc	/dev/block/platform/155a0000.ufs/by-name/RADIO    	flags=backup=1;display="Baseband"
+/efs		ext4	/dev/block/platform/155a0000.ufs/by-name/EFS	     	flags=backup=1;display="EFS"
+/misc		emmc    /dev/block/platform/155a0000.ufs/by-name/OTA
+/external_sd	vfat	/dev/block/mmcblk0p1 /dev/block/mmcblk0	         	flags=display="Micro SDcard";storage;wipeingui;removable
+/usb-otg	vfat	/dev/block/sde1  /dev/block/sde				flags=display="USB-OTG";storage;wipeingui;removable

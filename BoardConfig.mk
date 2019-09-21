@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+DEVICE_TREE := device/samsung/herolte
+
 # Platform
 BOARD_VENDOR := samsung
 TARGET_BOARD_PLATFORM := exynos5
@@ -28,6 +30,7 @@ TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := cortex-a53
+TARGET_CPU_SMP := true
 
 # Secondary Architecture
 TARGET_2ND_ARCH := arm
@@ -37,10 +40,10 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
 # Kernel
-TARGET_PREBUILT_KERNEL := device/samsung/herolte/kernel
+TARGET_PREBUILT_KERNEL := $(DEVICE_TREE)/kernel
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt device/samsung/herolte/dt.img
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt $(DEVICE_TREE)/dt.img
 
 # File systems
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -52,7 +55,8 @@ RECOVERY_VARIANT := twrp
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
-TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/15400000.usb/15400000.dwc3/gadget/lun%d/file"
+TW_BRIGHTNESS_PATH := "/sys/devices/13900000.dsim/backlight/panel/brightness"
 TW_MAX_BRIGHTNESS := 255
 TW_DEFAULT_BRIGHTNESS := 162
 TW_NO_REBOOT_BOOTLOADER := true
@@ -65,4 +69,5 @@ TW_EXTRA_LANGUAGES := true
 TW_USE_NEW_MINADBD := true
 BOARD_HAS_NO_REAL_SDCARD := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TW_EXCLUDE_TWRPAPP := true
 TW_DEVICE_VERSION := MoRo 1.0
