@@ -1,6 +1,6 @@
 # TWRP device tree for Samsung S7 aka herolte
 
- Copyright (C) 2019 Ananjaser1211 Open-source
+ Copyright (C) 2019 morogoku Open-source
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ Add to `.repo/local_manifests/herolte.xml`:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project name="ananjaser1211/android_device_samsung_hero" path="device/samsung/herolte" remote="github" revision="herolte" />
+  <project name="morogoku/android_device_samsung_herolte" path="device/samsung/herolte" remote="github" revision="android-9.0" />
 </manifest>
 ```
 
@@ -31,7 +31,7 @@ To build:
 ```sh
 . build/envsetup.sh
 lunch omni_herolte-eng
-make -j64 recoveryimage
+make -j8 recoveryimage
 ```
 
 Kernel sources are available at: https://github.com/exynos-linux-stable/herolte
