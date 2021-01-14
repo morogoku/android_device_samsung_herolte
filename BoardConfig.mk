@@ -28,7 +28,7 @@ LZMA_RAMDISK_TARGETS := recovery
 TARGET_PREBUILT_KERNEL := $(DEVICE_TREE)/kernel
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt device/samsung/herolte/dt.img
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt $(DEVICE_TREE)/dt.img
 
 # File systems
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -53,7 +53,7 @@ BOARD_HAS_NO_REAL_SDCARD := true
 TW_EXCLUDE_TWRPAPP := true
 TW_FORCE_USE_BUSYBOX := true
 TW_INCLUDE_RESETPROP := true
-TW_DEVICE_VERSION := MoRo-1.5.1
+TW_DEVICE_VERSION := MoRo-1.6
 
 # Encryption support
 TW_INCLUDE_CRYPTO := true
